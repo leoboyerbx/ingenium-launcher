@@ -1,14 +1,11 @@
 {
-  "name": "helioslauncher",
-  "version": "2.2.1",
-  "productName": "Helios Launcher",
+  "name": "ingeniumlauncher",
+  "version": "3.0.0",
+  "productName": "Ingenium Launcher",
   "description": "Modded Minecraft Launcher",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/)",
+  "author": "Ponk",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/dscalzi/HeliosLauncher",
-  "bugs": {
-    "url": "https://github.com/dscalzi/HeliosLauncher/issues"
-  },
+  "homepage": "https://github.com/leoboyerbx/ingenium-launcher",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -46,6 +43,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dscalzi/HeliosLauncher.git"
+    "url": "git+https://github.com/leoboyerbx/ingenium-launcher.gits"
   }
 }
