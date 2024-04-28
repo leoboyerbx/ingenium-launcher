@@ -5,15 +5,15 @@
  * modules, excluding dependencies.
  */
 // Requirements
-const $                              = require('jquery')
-const {ipcRenderer, shell, webFrame} = require('electron')
-const remote                         = require('@electron/remote')
-const isDev                          = require('./assets/js/isdev')
-const { LoggerUtil }                 = require('helios-core')
-const Lang                           = require('./assets/js/langloader')
+const $ = require('jquery')
+const { ipcRenderer, shell, webFrame } = require('electron')
+const remote = require('@electron/remote')
+const isDev = require('./assets/js/isdev')
+const { LoggerUtil } = require('helios-core')
+const Lang = require('./assets/js/langloader')
 
-const loggerUICore             = LoggerUtil.getLogger('UICore')
-const loggerAutoUpdater        = LoggerUtil.getLogger('AutoUpdater')
+const loggerUICore = LoggerUtil.getLogger('UICore')
+const loggerAutoUpdater = LoggerUtil.getLogger('AutoUpdater')
 
 // Log deprecation and process warnings.
 process.traceProcessWarnings = true
@@ -38,27 +38,27 @@ webFrame.setVisualZoomLevelLimits(1, 1)
 
 // Initialize auto updates in production environments.
 let updateCheckListener
-if(!isDev){
+if (!isDev) {
     ipcRenderer.on('autoUpdateNotification', (event, arg, info) => {
-        switch(arg){
+        switch (arg) {
             case 'checking-for-update':
                 loggerAutoUpdater.info('Checking for update..')
                 settingsUpdateButtonStatus(Lang.queryJS('uicore.autoUpdate.checkingForUpdateButton'), true)
                 break
             case 'update-available':
                 loggerAutoUpdater.info('New update available', info.version)
-                
-                if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/dscalzi/HeliosLauncher/releases/download/v${info.version}/Helios-Launcher-setup-${info.version}${process.arch === 'arm64' ? '-arm64' : '-x64'}.dmg`
+
+                if (process.platform === 'darwin') {
+                    info.darwindownload = `https://github.com/leoboyerbx/ingenium-launcher/releases/download/v${info.version}/Ingenium Launcher-setup-${info.version}${process.arch === 'arm64' ? '-arm64' : '-x64'}.dmg`
                     showUpdateUI(info)
                 }
-                
+
                 populateSettingsUpdateInformation(info)
                 break
             case 'update-downloaded':
                 loggerAutoUpdater.info('Update ' + info.version + ' ready to be installed.')
                 settingsUpdateButtonStatus(Lang.queryJS('uicore.autoUpdate.installNowButton'), false, () => {
-                    if(!isDev){
+                    if (!isDev) {
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
                     }
                 })
@@ -75,10 +75,10 @@ if(!isDev){
                 ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
                 break
             case 'realerror':
-                if(info != null && info.code != null){
-                    if(info.code === 'ERR_UPDATER_INVALID_RELEASE_FEED'){
+                if (info != null && info.code != null) {
+                    if (info.code === 'ERR_UPDATER_INVALID_RELEASE_FEED') {
                         loggerAutoUpdater.info('No suitable releases found.')
-                    } else if(info.code === 'ERR_XML_MISSED_ELEMENT'){
+                    } else if (info.code === 'ERR_XML_MISSED_ELEMENT') {
                         loggerAutoUpdater.info('No releases found.')
                     } else {
                         loggerAutoUpdater.error('Error during update check..', info)
@@ -101,11 +101,11 @@ if(!isDev){
  * 
  * @param {boolean} val The new allow prerelease value.
  */
-function changeAllowPrerelease(val){
+function changeAllowPrerelease(val) {
     ipcRenderer.send('autoUpdateAction', 'allowPrereleaseChange', val)
 }
 
-function showUpdateUI(info){
+function showUpdateUI(info) {
     //TODO Make this message a bit more informative `${info.version}`
     document.getElementById('image_seal_container').setAttribute('update', true)
     document.getElementById('image_seal_container').onclick = () => {
@@ -134,7 +134,7 @@ $(function(){
 })*/
 
 document.addEventListener('readystatechange', function () {
-    if (document.readyState === 'interactive'){
+    if (document.readyState === 'interactive') {
         loggerUICore.info('UICore Initializing..')
 
         // Bind close button.
@@ -149,7 +149,7 @@ document.addEventListener('readystatechange', function () {
         Array.from(document.getElementsByClassName('fRb')).map((val) => {
             val.addEventListener('click', e => {
                 const window = remote.getCurrentWindow()
-                if(window.isMaximized()){
+                if (window.isMaximized()) {
                     window.unmaximize()
                 } else {
                     window.maximize()
@@ -174,7 +174,7 @@ document.addEventListener('readystatechange', function () {
             })
         })
 
-    } else if(document.readyState === 'complete'){
+    } else if (document.readyState === 'complete') {
 
         //266.01
         //170.8
@@ -188,7 +188,7 @@ document.addEventListener('readystatechange', function () {
         document.getElementById('launch_progress').style.width = 170.8
         document.getElementById('launch_details_right').style.maxWidth = 170.8
         document.getElementById('launch_progress_label').style.width = 53.21
-        
+
     }
 
 }, false)
@@ -196,7 +196,7 @@ document.addEventListener('readystatechange', function () {
 /**
  * Open web links in the user's default browser.
  */
-$(document).on('click', 'a[href^="http"]', function(event) {
+$(document).on('click', 'a[href^="http"]', function (event) {
     event.preventDefault()
     shell.openExternal(this.href)
 })
@@ -207,7 +207,7 @@ $(document).on('click', 'a[href^="http"]', function(event) {
  * DevTools, for example the chrome debugger in VS Code. 
  */
 document.addEventListener('keydown', function (e) {
-    if((e.key === 'I' || e.key === 'i') && e.ctrlKey && e.shiftKey){
+    if ((e.key === 'I' || e.key === 'i') && e.ctrlKey && e.shiftKey) {
         let window = remote.getCurrentWindow()
         window.toggleDevTools()
     }
