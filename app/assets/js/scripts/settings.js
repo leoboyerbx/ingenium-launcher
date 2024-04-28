@@ -4,8 +4,6 @@ const os = require('os')
 
 const semver = require('semver')
 
-
-
 const DropinModUtil = require('./assets/js/dropinmodutil')
 
 const { MSFT_OPCODE, MSFT_REPLY_TYPE, MSFT_ERROR } = require('./assets/js/ipcconstants')

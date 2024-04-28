@@ -1,6 +1,6 @@
 appId: "ingeniumlauncher"
 productName: "Ingenium Launcher"
-artifactName: "${productName}-setup-${version}.${ext}"
+artifactName: "Ingenium-Launcher-setup-${version}.${ext}"
 
 copyright: "Copyright © 2018-2024 Daniel Scalzi | 2024 Ponk"
 
