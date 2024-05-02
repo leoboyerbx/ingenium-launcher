@@ -33,8 +33,6 @@ mac:
       arch:
         - "x64"
         - "arm64"
-  notarize:
-    teamId: "L5Q78XY962"
   artifactName: "Ingenium-Launcher-setup-${version}-${arch}.${ext}"
   category: "public.app-category.games"
   hardenedRuntime: true
