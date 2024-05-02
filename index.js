@@ -12,7 +12,6 @@ const semver = require('semver')
 const { pathToFileURL } = require('url')
 const { AZURE_CLIENT_ID, MSFT_OPCODE, MSFT_REPLY_TYPE, MSFT_ERROR, SHELL_OPCODE } = require('./app/assets/js/ipcconstants')
 const LangLoader = require('./app/assets/js/langloader')
-
 // Setup Lang
 LangLoader.setupLanguage()
 
@@ -247,7 +246,6 @@ function createWindow() {
     Object.entries(data).forEach(([key, val]) => ejse.data(key, val))
 
     win.loadURL(pathToFileURL(path.join(__dirname, 'app', 'app.ejs')).toString())
-
     /*win.once('ready-to-show', () => {
         win.show()
     })*/
@@ -343,6 +341,7 @@ function getPlatformIcon(filename) {
 
 app.on('ready', createWindow)
 app.on('ready', createMenu)
+
 
 app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar
