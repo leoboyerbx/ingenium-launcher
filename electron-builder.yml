@@ -7,6 +7,11 @@ copyright: "Copyright © 2018-2024 Daniel Scalzi | 2024 Ponk"
 asar: true
 compression: "maximum"
 
+# publish:
+#   provider: github
+#   repo: ingenium-launcher
+#   owner: leoboyerbx
+
 files:
   - "!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.nvmrc,.eslintrc.json}"
 

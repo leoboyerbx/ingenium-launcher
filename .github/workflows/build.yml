@@ -2,8 +2,8 @@ name: Build
 
 on:
   push:
-    branches:
-      - "release"
+    tags:
+      - "**"
 
 jobs:
   release:
@@ -48,5 +48,5 @@ jobs:
           APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
           APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
           APPLE_API_KEY: "key.p8"
-        run: npm run dist --publish=always
+        run: npm run dist
         shell: bash
