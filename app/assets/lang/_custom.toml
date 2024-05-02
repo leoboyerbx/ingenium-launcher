@@ -16,5 +16,5 @@ supportLink = "https://github.com/leoboyerbx/ingenium-launcher/issues"
 
 [ejs.welcome]
 welcomeHeader = "Bienvenue sur Ingenium"
-welcomeDescription = "Ce launcher permet de se connecter à notre serveur Minecraft vanilla+Create. Pour le moment il est pas brandé et est en anglais mais il fonctionne !"
+welcomeDescription = "Ce launcher permet de se connecter aux serveurs Ingenium. (Vanilla, create, moddé léger)"
 welcomeDescCTA = "Alors, on attend quoi ?"
