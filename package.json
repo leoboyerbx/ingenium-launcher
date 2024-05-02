@@ -1,6 +1,6 @@
 {
   "name": "ingeniumlauncher",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "productName": "Ingenium Launcher",
   "description": "Modded Minecraft Launcher",
   "author": "Ponk",
@@ -43,6 +43,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leoboyerbx/ingenium-launcher.gits"
+    "url": "git+https://github.com/leoboyerbx/ingenium-launcher.git"
   }
 }
