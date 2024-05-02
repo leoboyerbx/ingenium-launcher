@@ -1,4 +1,4 @@
-appId: "ingeniumlauncher"
+appId: "stuio.pnk.ingeniumlauncher"
 productName: "Ingenium Launcher"
 artifactName: "Ingenium-Launcher-setup-${version}.${ext}"
 
@@ -26,15 +26,19 @@ nsis:
   allowElevation: true
   allowToChangeInstallationDirectory: true
 
-# macOS Configuration
+# macOS Configuration"
 mac:
   target:
     - target: "dmg"
       arch:
         - "x64"
         - "arm64"
+  notarize:
+    teamId: "${env.APPLE_TEAM_ID}"
   artifactName: "Ingenium-Launcher-setup-${version}-${arch}.${ext}"
   category: "public.app-category.games"
+  hardenedRuntime: true
+  entitlements: "./node_modules/electron-builder-notarize/entitlements.mac.inherit.plist"
 
 # Linux Configuration
 linux:
