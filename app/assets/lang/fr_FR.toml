@@ -291,8 +291,8 @@ closeButton = "Fermer"
 
 [js.uibinder.validateAccount]
 failedMessageTitle = "Impossible d'actualiser la connexion"
-failedMessage = "Nous n'avons pas pu actualiser la connexion pour <strong>{compte}</strong>. Veuillez sélectionner un autre compte ou vous reconnecter."
-failedMessageSelectAnotherAccount = "Nous n'avons pas pu actualiser la connexion pour <strong>{compte}</strong>."
+failedMessage = "Nous n'avons pas pu actualiser la connexion pour <strong>{account}</strong>. Veuillez sélectionner un autre compte ou vous reconnecter."
+failedMessageSelectAnotherAccount = "Nous n'avons pas pu actualiser la connexion pour <strong>{account}</strong>."
 loginButton = "Connexion"
 selectAnotherAccountButton = "Sélectionner un autre compte"
 
