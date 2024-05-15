@@ -1,4 +1,4 @@
-appId: "stuio.pnk.ingeniumlauncher"
+appId: "studio.pnk.ingeniumlauncher"
 productName: "Ingenium Launcher"
 artifactName: "Ingenium-Launcher-setup-${version}.${ext}"
 
@@ -35,9 +35,7 @@ nsis:
 mac:
   target:
     - target: "dmg"
-      arch:
-        - "x64"
-        - "arm64"
+      arch: "universal"
   artifactName: "Ingenium-Launcher-setup-${version}-${arch}.${ext}"
   category: "public.app-category.games"
   hardenedRuntime: true
