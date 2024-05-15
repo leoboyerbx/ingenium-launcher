@@ -1,8 +1,4 @@
-// NOTE FOR THIRD-PARTY
-// REPLACE THIS CLIENT ID WITH YOUR APPLICATION ID.
-exports.AZURE_CLIENT_ID = '1ce6e35a-126f-48fd-97fb-54d143ac6d45' // Provided by helios
-// exports.AZURE_CLIENT_ID = 'e14900f7-cef5-4f48-aebb-a35db33511ce' // Mine, waiting
-// SEE NOTE ABOVE.
+exports.AZURE_CLIENT_ID = 'e14900f7-cef5-4f48-aebb-a35db33511ce'
 
 // Opcodes
 exports.MSFT_OPCODE = {
