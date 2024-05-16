@@ -46,7 +46,6 @@ const otherDownloads = computed(() => {
     delete o[os.value]
     return o
 })
-console.log(otherDownloads.value)
 </script>
 <template>
     <div>
@@ -60,7 +59,7 @@ console.log(otherDownloads.value)
                         Télécharger pour <span class="capitalize">{{ os }}</span>
                     </span>
                     <span class="font-light text-xs">
-                        {{ activeDownloadData.description }}
+                        {{ releaseData.tag_name }} | {{ activeDownloadData.description }}
                     </span>
                 </span>
             </a>
