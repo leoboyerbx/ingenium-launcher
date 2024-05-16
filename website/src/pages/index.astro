@@ -1,38 +1,37 @@
 ---
+import DownloadButton from "../components/DownloadButton.vue";
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
 
 const releaseData = await fetch(
   "https://api.github.com/repos/leoboyerbx/ingenium-launcher/releases/latest"
 ).then((r) => r.json());
-
-// console.log(
-//   releaseData.assets.find((asset: any) => asset.name.endsWith(".dmg"))
-// );
 ---
 
 <Layout title="Ingenum Launcher">
-  <main class="flex justify-center">
-    <div class="flex flex-col items-center text-center gap-6 max-w-xl">
-      <span class="text-sm text-accent">App Name: The future of the web</span>
+  <main class="flex h-full">
+    <div class="w-7/12 flex flex-col justify-center">
+      <div
+        class="flex flex-col items-center text-center gap-6 max-w-xl mb-12 mx-auto"
+      >
+        <img src="/favicon.png" class="w-48 mb-2" alt="" />
+        <h1 class="text-5xl font-bold">Ingenium launcher</h1>
 
-      <h1 class="text-5xl font-bold">The Intuitive Web Solutions</h1>
+        <span class="">Viens jouer avec nous !</span>
 
-      <span class="">
-        The future of the web is here. App Name is the solution for everyone who
-        wants to participate in the future of the web!
-      </span>
-
-      <div class="flex gap-4">
-        <a class="btn btn-primary">
-          Get started
-          <Icon name="uil:download-alt" />
-        </a>
-
-        <a class="btn btn-neutral">
-          See our blog
-          <i class="fa-solid fa-blog"></i>
-        </a>
+        <div class="flex gap-4">
+          <DownloadButton releaseData={releaseData} client:load />
+        </div>
+      </div>
+    </div>
+    <div class="flex-grow h-full relative pointer-events-none">
+      <img
+        src="/background.jpg"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div
+        class="absolute inset-0 w-full h-full bg-gradient-to-r from-base-100 to-transparent"
+      >
       </div>
     </div>
   </main>
