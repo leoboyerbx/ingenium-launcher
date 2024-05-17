@@ -49,7 +49,7 @@ if (!isDev) {
                 loggerAutoUpdater.info('New update available', info.version)
 
                 if (process.platform === 'darwin') {
-                    info.darwindownload = `https://github.com/leoboyerbx/ingenium-launcher/releases/download/v${info.version}/Ingenium-Launcher-setup-${info.version}${process.arch === 'arm64' ? '-arm64' : '-x64'}.dmg`
+                    info.darwindownload = `https://github.com/leoboyerbx/ingenium-launcher/releases/download/v${info.version}/Ingenium-Launcher-setup-${info.version}-universal.dmg`
                     showUpdateUI(info)
                 }
 

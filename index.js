@@ -224,7 +224,6 @@ ipcMain.on(MSFT_OPCODE.OPEN_LOGOUT, (ipcEvent, uuid, isLastAccount) => {
 let win
 
 function createWindow() {
-
     win = new BrowserWindow({
         width: 980,
         height: 552,
@@ -256,8 +255,6 @@ function createWindow() {
     // });
 
     win.resizable = true
-
-    autoUpdater.checkForUpdatesAndNotify()
 
     win.on('closed', () => {
         win = null
@@ -348,6 +345,7 @@ app.on('ready', createWindow)
 app.on('ready', createMenu)
 
 
+autoUpdater.checkForUpdatesAndNotify()
 app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
@@ -359,6 +357,8 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
+
+    autoUpdater.checkForUpdatesAndNotify()
     if (win === null) {
         createWindow()
     }
