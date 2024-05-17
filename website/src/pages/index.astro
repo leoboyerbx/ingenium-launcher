@@ -21,6 +21,16 @@ const releaseData = await fetch(
         <div class="flex gap-4">
           <DownloadButton releaseData={releaseData} client:load />
         </div>
+        <div class="">
+          <a
+            href="https://github.com/leoboyerbx/ingenium-launcher/releases"
+            target="_blank"
+            class="flex items-center gap-1 text-sm underline hover:text-white transition duration-200"
+          >
+            <span>Toutes les versions</span>
+            <span class="i-uil-external-link-alt mb-0.5"></span>
+          </a>
+        </div>
       </div>
     </div>
     <div class="flex-grow h-full relative pointer-events-none">
