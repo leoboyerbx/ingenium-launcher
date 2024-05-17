@@ -1,0 +1,13 @@
+on:
+  release:
+    types: [published]
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Website deployment on release
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: ${{ secrets.CLOUDFLARE_DEPLOY_TRIGGER_WEBHOOK }}
+          method: "POST"
