@@ -257,6 +257,8 @@ function createWindow() {
 
     win.resizable = true
 
+    autoUpdater.checkForUpdatesAndNotify()
+
     win.on('closed', () => {
         win = null
     })
