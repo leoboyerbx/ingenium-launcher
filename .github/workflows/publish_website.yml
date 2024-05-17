@@ -2,7 +2,7 @@ name: Publish Website on release
 
 on:
   release:
-    types: [released]
+    types: [released, published]
 
 jobs:
   deployment:
