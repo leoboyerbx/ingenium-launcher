@@ -18,6 +18,18 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="h-full">
+    <header class="absolute top-0 left-0 w-full flex z-20 py-6 px-8">
+      <nav class="ml-auto">
+        <a
+          href="https://github.com/leoboyerbx/ingenium-launcher"
+          title="Github"
+          class="text-white hover:text-primary transition duration-200"
+          target="_blank"
+        >
+          <span class="i-uil-github text-[32px]"></span>
+        </a>
+      </nav>
+    </header>
     <slot />
   </body>
 </html>
