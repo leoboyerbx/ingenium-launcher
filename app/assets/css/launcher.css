@@ -3991,3 +3991,7 @@ input:checked + .toggleSwitchSlider:before {
 .rotating {
   animation: rotating 1s ease-in-out infinite;
 }
+
+.hidden {
+  display: none !important;
+}
