@@ -39,7 +39,9 @@ mac:
   artifactName: "Ingenium-Launcher-setup-${version}-${arch}.${ext}"
   category: "public.app-category.games"
   hardenedRuntime: true
-  entitlements: "./node_modules/electron-builder-notarize/entitlements.mac.inherit.plist"
+  entitlements: "./entitlements.mac.plist"
+  extendInfo:
+    "NSMicrophoneUsageDescription": "L'accès au micro permet au chat vocal in-game de fonctionner correctement."
 
 # Linux Configuration
 linux:
