@@ -2,7 +2,7 @@ const remoteMain = require('@electron/remote/main')
 remoteMain.initialize()
 
 // Requirements
-const { app, BrowserWindow, ipcMain, Menu, shell } = require('electron')
+const { app, BrowserWindow, ipcMain, Menu, shell, systemPreferences } = require('electron')
 const autoUpdater = require('electron-updater').autoUpdater
 const ejse = require('ejs-electron')
 const fs = require('fs')
@@ -255,6 +255,8 @@ function createWindow() {
     // });
 
     win.resizable = true
+
+    systemPreferences.askForMediaAccess('microphone')
 
     win.on('closed', () => {
         win = null
