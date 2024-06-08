@@ -5,7 +5,7 @@ remoteMain.initialize()
 const { app, BrowserWindow, ipcMain, Menu, shell, systemPreferences } = require('electron')
 
 const { LoggerUtil } = require('helios-core')
-
+const os = require('os');
 const logger = LoggerUtil.getLogger('ConfigManager')
 const autoUpdater = require('electron-updater').autoUpdater
 const ejse = require('ejs-electron')
@@ -260,9 +260,11 @@ function createWindow() {
 
     win.resizable = true
 
-    systemPreferences.askForMediaAccess('microphone').then((res) => {
-        logger.info('Micrtophone result :', res)
-    })
+    if (os.platform() === 'darwin') {
+        systemPreferences.askForMediaAccess('microphone').then((res) => {
+            logger.info('Micrtophone result :', res)
+        })
+    }
 
     win.on('closed', () => {
         win = null
