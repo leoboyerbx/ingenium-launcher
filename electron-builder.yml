@@ -45,7 +45,7 @@ mac:
 
 # Linux Configuration
 linux:
-  target: "AppImage"
+  target: "deb"
   maintainer: "Ponk"
   vendor: "Ponk"
   synopsis: "Modded Minecraft Launcher"

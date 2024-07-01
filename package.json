@@ -14,7 +14,7 @@
     "release": "npm run dist",
     "dist:win": "npm run dist -- -w",
     "dist:mac": "npm run dist -- -m",
-    "dist:linux": "npm run dist -- -l",
+    "dist:linux": "npm run dist -- -l --x64",
     "lint": "eslint --config .eslintrc.json ."
   },
   "engines": {
